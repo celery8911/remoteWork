@@ -86,9 +86,15 @@ jobs:
           ---
           🔄 Ready for manual review by Claude Code (local client)"
 
-          gh pr create \
+          # Create PR without labels first
+          PR_URL=$(gh pr create \
             --title "🤖 Codex Solutions - $(date +%Y%m%d-%H%M%S)" \
             --body "$PR_BODY" \
-            --label "codex-submission,needs-review" \
             --base main \
-            --head "$BRANCH_NAME"
+            --head "$BRANCH_NAME")
+
+          echo "Created PR: $PR_URL"
+
+          # Try to add labels, but don't fail if they don't exist
+          gh pr edit "$PR_URL" --add-label "codex-submission" 2>/dev/null || echo "Label 'codex-submission' not found, skipping"
+          gh pr edit "$PR_URL" --add-label "needs-review" 2>/dev/null || echo "Label 'needs-review' not found, skipping"
