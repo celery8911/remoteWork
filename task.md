@@ -1,12 +1,5 @@
 # LeetCode AI Task Board
 
-## Rules
-- Codex must complete ALL tasks with status TODO
-- Codex must NOT touch tasks marked DONE
-- Claude is the only one allowed to modify this file
-
----
-
 ## Tasks
 
 ### LC-001 Two Sum
