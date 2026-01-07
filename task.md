@@ -27,3 +27,14 @@
   - TypeScript
   - Use linked list definition
   - Clear variable naming
+
+---
+
+### LC-003 Longest Substring Without Repeating Characters
+- Status: TODO
+- Path: problems/003-longest-substring
+- Requirements:
+  - TypeScript
+  - Sliding window approach
+  - O(n) time complexity
+  - Include time & space complexity comments
