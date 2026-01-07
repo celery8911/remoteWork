@@ -10,14 +10,20 @@
 ## Tasks
 
 ### LC-001 Two Sum
-- Status: TODO
+- Status: DONE
 - Path: problems/001-two-sum
+- Completed: 2026-01-07
+- Notes: Hash map O(n) solution with corrected test cases
+
+---
+
+### LC-020 Valid Parentheses
+- Status: TODO
+- Path: problems/020-valid-parentheses
 - Requirements:
   - TypeScript
-  - O(n) solution using hash map
+  - Use stack data structure
+  - O(n) time complexity
+  - Handle three types: (), {}, []
   - Include time & space complexity comments
-  - Add at least 3 test cases
-- **FIX REQUIRED**: Test case #3 has incorrect expected value
-  - Current: nums=[1,5,3,6,8], target=9, expected=[1,2]
-  - Issue: nums[1] + nums[2] = 5 + 3 = 8 ≠ 9
-  - Correct: expected should be [0,4] (1 + 8 = 9) or [2,3] (3 + 6 = 9)
+  - Add at least 4 test cases (including edge cases)
