@@ -1,0 +1,94 @@
+name: Codex Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'task.md'
+  workflow_dispatch:
+
+jobs:
+  codex-solve-tasks:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check for TODO tasks
+        id: check-tasks
+        run: |
+          if grep -q "Status: TODO" task.md; then
+            echo "has_todos=true" >> $GITHUB_OUTPUT
+            echo "✓ Found TODO tasks"
+          else
+            echo "has_todos=false" >> $GITHUB_OUTPUT
+            echo "✓ No TODO tasks, skipping"
+          fi
+
+      - name: Create task branch
+        if: steps.check-tasks.outputs.has_todos == 'true'
+        run: |
+          BRANCH_NAME="codex/solve-$(date +%s)"
+          git checkout -b "$BRANCH_NAME"
+          echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
+
+      - name: Run Codex to implement tasks
+        if: steps.check-tasks.outputs.has_todos == 'true'
+        uses: openai/codex-action@v1
+        with:
+          openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+          prompt-file: .ai/codex.prompt.md
+          output-file: codex-output.md
+          sandbox: workspace-write
+          safety-strategy: drop-sudo
+
+      - name: Commit Codex solutions
+        if: steps.check-tasks.outputs.has_todos == 'true'
+        run: |
+          git config user.name "Codex Bot"
+          git config user.email "codex@openai.com"
+
+          git add problems/
+
+          if ! git diff --cached --quiet; then
+            git commit -m "🤖 Codex: Implement TODO tasks
+
+            Generated solutions for LeetCode problems.
+            Waiting for Claude Code review."
+
+            git push origin "$BRANCH_NAME"
+          else
+            echo "No changes made by Codex"
+            exit 1
+          fi
+
+      - name: Create Pull Request
+        if: steps.check-tasks.outputs.has_todos == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_BODY="## 🤖 Codex Implementation Report
+
+          This PR contains automated solutions for TODO tasks in task.md.
+
+          **Status:** Awaiting Claude Code review 👀
+
+          ### Codex Output
+          \`\`\`
+          $(cat codex-output.md 2>/dev/null || echo "No output file generated")
+          \`\`\`
+
+          ---
+          🔄 Ready for manual review by Claude Code (local client)"
+
+          gh pr create \
+            --title "🤖 Codex Solutions - $(date +%Y%m%d-%H%M%S)" \
+            --body "$PR_BODY" \
+            --label "codex-submission,needs-review" \
+            --base main \
+            --head "$BRANCH_NAME"

@@ -1,37 +1,29 @@
-# LeetCode 算法题任务列表
+# LeetCode AI Task Board
 
-## Task 1: Two Sum (两数之和)
-
-**难度**: 简单
-
-**题目描述**:
-给定一个整数数组 `nums` 和一个整数目标值 `target`，请你在该数组中找出和为目标值 `target` 的那两个整数，并返回它们的数组下标。
-
-**示例**:
-```
-输入：nums = [2,7,11,15], target = 9
-输出：[0,1]
-解释：因为 nums[0] + nums[1] == 9，返回 [0, 1]
-```
-
-**提示**: 使用哈希表来优化时间复杂度到 O(n)
+## Rules
+- Codex must complete ALL tasks with status TODO
+- Codex must NOT touch tasks marked DONE
+- Claude is the only one allowed to modify this file
 
 ---
 
-## Task 2: Reverse Linked List (反转链表)
+## Tasks
 
-**难度**: 简单
-
-**题目描述**:
-给你单链表的头节点 `head`，请你反转链表，并返回反转后的链表。
-
-**示例**:
-```
-输入：head = [1,2,3,4,5]
-输出：[5,4,3,2,1]
-```
-
-**提示**: 可以使用迭代或递归方法实现
+### LC-001 Two Sum
+- Status: TODO
+- Path: problems/001-two-sum
+- Requirements:
+  - TypeScript
+  - O(n) solution
+  - Include time & space complexity comments
+  - Pass basic test cases
 
 ---
 
+### LC-002 Add Two Numbers
+- Status: TODO
+- Path: problems/002-add-two-numbers
+- Requirements:
+  - TypeScript
+  - Use linked list definition
+  - Clear variable naming
