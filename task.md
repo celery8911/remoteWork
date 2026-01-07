@@ -14,27 +14,6 @@
 - Path: problems/001-two-sum
 - Requirements:
   - TypeScript
-  - O(n) solution
+  - O(n) solution using hash map
   - Include time & space complexity comments
-  - Pass basic test cases
-
----
-
-### LC-002 Add Two Numbers
-- Status: TODO
-- Path: problems/002-add-two-numbers
-- Requirements:
-  - TypeScript
-  - Use linked list definition
-  - Clear variable naming
-
----
-
-### LC-003 Longest Substring Without Repeating Characters
-- Status: TODO
-- Path: problems/003-longest-substring
-- Requirements:
-  - TypeScript
-  - Sliding window approach
-  - O(n) time complexity
-  - Include time & space complexity comments
+  - Add at least 3 test cases
