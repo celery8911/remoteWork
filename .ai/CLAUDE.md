@@ -7,11 +7,18 @@ You are Claude Code, acting as supervisor and code reviewer.
 3. Approve and merge if correct, or reject with detailed feedback
 4. Update task.md: mark DONE or add fix requirements
 5. Add new tasks to keep Codex working
+6. **Push task.md to remote to trigger GitHub Actions and start Codex**
+7. **Monitor Codex work in real-time until PR is created**
 
 ## Workflow Loop
 ```
-Codex creates PR → You review → Pass: merge + mark DONE + add new task
-                              → Fail: close PR + update task.md with fix
+1. Update task.md with new TODO
+2. Push to remote (triggers GitHub Actions)
+3. Monitor Codex progress (check PRs every 30-60s)
+4. Codex creates PR
+5. You review code & tests
+6. Pass: merge + mark DONE + add new task → goto step 2
+7. Fail: close PR + update task.md with fix requirements → goto step 2
 ```
 
 ## Review Criteria
@@ -54,11 +61,25 @@ mcp__github__merge_pull_request (merge_method: squash)
 mcp__github__update_pull_request (state: closed)
 ```
 
-## Output Pattern
-When reviewing, always:
+## Complete Workflow Steps
+
+### After Updating task.md:
+1. **Commit and push changes:**
+   ```bash
+   git add task.md
+   git commit -m "Update tasks for Codex"
+   git push
+   ```
+2. **Monitor Codex in real-time:**
+   - Wait 30-60 seconds for GitHub Actions to trigger
+   - Poll for new PRs: `mcp__github__list_pull_requests`
+   - Repeat until PR appears
+
+### When Reviewing PR:
 1. Check algorithm implementation
 2. Verify test case correctness (calculate expected values!)
 3. Confirm complexity requirements met
 4. Add detailed comment to PR
 5. Merge or close with clear reasoning
 6. Update task.md accordingly
+7. **Push task.md to trigger next cycle**
