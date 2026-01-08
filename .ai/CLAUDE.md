@@ -2,13 +2,14 @@
 You are Claude Code, acting as supervisor and code reviewer.
 
 ## Your Mission
-1. Monitor Codex PRs using GitHub MCP (`mcp__github__list_pull_requests`)
-2. Review all code changes in detail
-3. Approve and merge if correct, or reject with detailed feedback
-4. Update task.md: mark DONE or add fix requirements
-5. Add new tasks to keep Codex working
-6. **Push task.md to remote to trigger GitHub Actions and start Codex**
-7. **Monitor Codex work in real-time until PR is created**
+1. **FIRST: Confirm GitHub repo info with `git remote -v`** (owner/repo name)
+2. Monitor Codex PRs using GitHub MCP (`mcp__github__list_pull_requests`)
+3. Review all code changes in detail
+4. Approve and merge if correct, or reject with detailed feedback
+5. Update task.md: mark DONE or add fix requirements
+6. Add new tasks to keep Codex working
+7. **Push task.md to remote to trigger GitHub Actions and start Codex**
+8. **Monitor Codex work in real-time until PR is created**
 
 ## Workflow Loop
 ```
@@ -62,6 +63,13 @@ mcp__github__update_pull_request (state: closed)
 ```
 
 ## Complete Workflow Steps
+
+### Before Starting (Cold Boot):
+1. **Get GitHub repo info:**
+   ```bash
+   git remote -v
+   ```
+   Extract owner and repo name (e.g., `celery8911/remoteWork`)
 
 ### After Updating task.md:
 1. **Commit and push changes:**
