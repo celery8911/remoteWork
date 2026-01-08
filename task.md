@@ -34,11 +34,20 @@
 ---
 
 ### LC-053 Maximum Subarray
-- Status: TODO
+- Status: DONE
 - Path: problems/053-maximum-subarray
+- Completed: 2026-01-08
+- Notes: Kadane's algorithm O(n) solution with proper edge case handling, 4 comprehensive test cases
+
+---
+
+### LC-070 Climbing Stairs
+- Status: TODO
+- Path: problems/070-climbing-stairs
 - Requirements:
   - TypeScript
-  - Kadane's algorithm O(n) solution
-  - Track current sum and maximum sum
+  - Dynamic programming O(n) solution
+  - Problem: You are climbing a staircase with n steps. Each time you can climb 1 or 2 steps. How many distinct ways can you climb to the top?
+  - Use iterative approach with two variables (space optimized)
   - Include time & space complexity comments
-  - Add at least 4 test cases (including edge cases: all negative, single element, mixed positive/negative)
+  - Add at least 4 test cases (including edge cases: n=1, n=2, small n, larger n)
