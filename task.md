@@ -26,11 +26,19 @@
 ---
 
 ### LC-121 Best Time to Buy and Sell Stock
-- Status: TODO
+- Status: DONE
 - Path: problems/121-best-time-to-buy-sell-stock
+- Completed: 2026-01-07
+- Notes: Single-pass O(n) solution with min-price tracking, 5 comprehensive test cases covering all edge cases
+
+---
+
+### LC-053 Maximum Subarray
+- Status: TODO
+- Path: problems/053-maximum-subarray
 - Requirements:
   - TypeScript
-  - Single pass O(n) solution
-  - Track minimum price and maximum profit
+  - Kadane's algorithm O(n) solution
+  - Track current sum and maximum sum
   - Include time & space complexity comments
-  - Add at least 4 test cases (including edge cases: empty, single day, decreasing prices)
+  - Add at least 4 test cases (including edge cases: all negative, single element, mixed positive/negative)
