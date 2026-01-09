@@ -50,13 +50,22 @@
 ---
 
 ### LC-206 Reverse Linked List
-- Status: TODO
+- Status: DONE
 - Path: problems/206-reverse-linked-list
+- Completed: 2026-01-09
+- Notes: Three-pointer iterative reversal with O(n) time and O(1) space, 4 comprehensive test cases covering all edge cases
+
+---
+
+### LC-141 Linked List Cycle
+- Status: TODO
+- Path: problems/141-linked-list-cycle
 - Requirements:
   - TypeScript
-  - Iterative solution with O(n) time, O(1) space
-  - Problem: Given the head of a singly linked list, reverse the list and return the reversed list
-  - Define ListNode class/interface
-  - Use three-pointer approach (prev, current, next)
+  - Floyd's cycle detection (two pointers: slow and fast)
+  - O(n) time, O(1) space
+  - Problem: Given head of a linked list, determine if it has a cycle
+  - Reuse or define ListNode class/interface
+  - Use fast/slow pointer approach (Floyd's tortoise and hare)
   - Include time & space complexity comments
-  - Add at least 4 test cases (including edge cases: empty list, single node, two nodes, longer list)
+  - Add at least 4 test cases (including edge cases: empty list, single node, list without cycle, list with cycle at different positions)
