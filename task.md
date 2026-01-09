@@ -58,14 +58,22 @@
 ---
 
 ### LC-141 Linked List Cycle
-- Status: TODO
+- Status: DONE
 - Path: problems/141-linked-list-cycle
+- Completed: 2026-01-09
+- Notes: Floyd's cycle detection with fast/slow pointers, O(n) time and O(1) space, 6 comprehensive test cases covering all edge cases
+
+---
+
+### LC-021 Merge Two Sorted Lists
+- Status: TODO
+- Path: problems/021-merge-two-sorted-lists
 - Requirements:
   - TypeScript
-  - Floyd's cycle detection (two pointers: slow and fast)
-  - O(n) time, O(1) space
-  - Problem: Given head of a linked list, determine if it has a cycle
+  - Iterative or recursive merge of two sorted linked lists
+  - O(n+m) time, O(1) space for iterative (O(n+m) space for recursive due to call stack)
+  - Problem: Merge two sorted linked lists and return it as a sorted list
   - Reuse or define ListNode class/interface
-  - Use fast/slow pointer approach (Floyd's tortoise and hare)
+  - Use dummy node technique for clean implementation
   - Include time & space complexity comments
-  - Add at least 4 test cases (including edge cases: empty list, single node, list without cycle, list with cycle at different positions)
+  - Add at least 4 test cases (including edge cases: both empty, one empty, equal length, different lengths)
