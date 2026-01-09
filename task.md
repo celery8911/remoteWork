@@ -42,13 +42,21 @@
 ---
 
 ### LC-070 Climbing Stairs
-- Status: TODO
+- Status: DONE
 - Path: problems/070-climbing-stairs
+- Completed: 2026-01-09
+- Notes: Fibonacci-based DP solution with O(1) space optimization, 5 test cases with verified edge cases
+
+---
+
+### LC-206 Reverse Linked List
+- Status: TODO
+- Path: problems/206-reverse-linked-list
 - Requirements:
   - TypeScript
-  - Dynamic programming O(n) solution
-  - Problem: You are climbing a staircase with n steps. Each time you can climb 1 or 2 steps. How many distinct ways can you climb to the top?
-  - Use iterative approach with two variables (space optimized)
+  - Iterative solution with O(n) time, O(1) space
+  - Problem: Given the head of a singly linked list, reverse the list and return the reversed list
+  - Define ListNode class/interface
+  - Use three-pointer approach (prev, current, next)
   - Include time & space complexity comments
-  - Add at least 4 test cases (including edge cases: n=1, n=2, small n, larger n)
-
+  - Add at least 4 test cases (including edge cases: empty list, single node, two nodes, longer list)
