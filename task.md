@@ -74,14 +74,22 @@
 ---
 
 ### LC-234 Palindrome Linked List
-- Status: TODO
+- Status: DONE
 - Path: problems/234-palindrome-linked-list
+- Completed: 2026-01-11
+- Notes: Two-pointer approach with in-place reversal, O(n) time and O(1) space, 7 comprehensive test cases covering all edge cases
+
+---
+
+### LC-226 Invert Binary Tree
+- Status: TODO
+- Path: problems/226-invert-binary-tree
 - Requirements:
   - TypeScript
-  - Check if a linked list is a palindrome
-  - O(n) time, O(1) space (optimal approach: find middle + reverse second half + compare)
-  - Problem: Given the head of a singly linked list, return true if it is a palindrome
-  - Reuse or define ListNode class/interface
-  - Use two-pointer approach to find middle, reverse second half, then compare
+  - Invert a binary tree (swap left and right children recursively)
+  - O(n) time, O(h) space where h is tree height (recursive call stack)
+  - Problem: Given the root of a binary tree, invert the tree and return its root
+  - Define TreeNode class/interface with val, left, right
+  - Can use recursive or iterative (queue-based) approach
   - Include time & space complexity comments
-  - Add at least 5 test cases (including edge cases: empty, single node, two nodes same/different, odd/even length palindromes, non-palindrome)
+  - Add at least 5 test cases (including edge cases: empty tree, single node, left-only tree, right-only tree, balanced tree)
