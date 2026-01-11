@@ -82,14 +82,22 @@
 ---
 
 ### LC-226 Invert Binary Tree
-- Status: TODO
+- Status: DONE
 - Path: problems/226-invert-binary-tree
+- Completed: 2026-01-11
+- Notes: Recursive inversion with left/right subtree swapping, O(n) time and O(h) space, 5 comprehensive test cases covering all edge cases
+
+---
+
+### LC-104 Maximum Depth of Binary Tree
+- Status: TODO
+- Path: problems/104-maximum-depth-binary-tree
 - Requirements:
   - TypeScript
-  - Invert a binary tree (swap left and right children recursively)
+  - Find the maximum depth of a binary tree (longest path from root to leaf)
   - O(n) time, O(h) space where h is tree height (recursive call stack)
-  - Problem: Given the root of a binary tree, invert the tree and return its root
-  - Define TreeNode class/interface with val, left, right
-  - Can use recursive or iterative (queue-based) approach
+  - Problem: Given the root of a binary tree, return its maximum depth
+  - Use TreeNode class/interface with val, left, right
+  - Can use recursive or iterative (level-order traversal) approach
   - Include time & space complexity comments
-  - Add at least 5 test cases (including edge cases: empty tree, single node, left-only tree, right-only tree, balanced tree)
+  - Add at least 5 test cases (including edge cases: empty tree, single node, left-skewed tree, right-skewed tree, balanced tree)
