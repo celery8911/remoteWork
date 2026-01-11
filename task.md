@@ -66,14 +66,22 @@
 ---
 
 ### LC-021 Merge Two Sorted Lists
-- Status: TODO
+- Status: DONE
 - Path: problems/021-merge-two-sorted-lists
+- Completed: 2026-01-09
+- Notes: Dummy node iterative merge with O(n+m) time and O(1) space, 4 comprehensive test cases with verified edge cases
+
+---
+
+### LC-234 Palindrome Linked List
+- Status: TODO
+- Path: problems/234-palindrome-linked-list
 - Requirements:
   - TypeScript
-  - Iterative or recursive merge of two sorted linked lists
-  - O(n+m) time, O(1) space for iterative (O(n+m) space for recursive due to call stack)
-  - Problem: Merge two sorted linked lists and return it as a sorted list
+  - Check if a linked list is a palindrome
+  - O(n) time, O(1) space (optimal approach: find middle + reverse second half + compare)
+  - Problem: Given the head of a singly linked list, return true if it is a palindrome
   - Reuse or define ListNode class/interface
-  - Use dummy node technique for clean implementation
+  - Use two-pointer approach to find middle, reverse second half, then compare
   - Include time & space complexity comments
-  - Add at least 4 test cases (including edge cases: both empty, one empty, equal length, different lengths)
+  - Add at least 5 test cases (including edge cases: empty, single node, two nodes same/different, odd/even length palindromes, non-palindrome)
